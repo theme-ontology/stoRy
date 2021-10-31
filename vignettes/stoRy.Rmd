@@ -1,0 +1,430 @@
+---
+title: "An Introduction to stoRy"
+author:
+  - Paul Sheridan
+  - Oshan Modi
+  - Mikael Onsjö
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+bibliography: assets/stoRy_refs.bib
+output: rmarkdown::html_vignette
+description: This vignette introduces stoRy package functions for downloading,
+  exploring, and analyzing Literary Theme Ontology (LTO) data. Familiarity
+  with LTO themes and the related collaborative system of story thematic
+  annotation is helpful, but not absolutely necessary for working through this
+  vignette.
+vignette: >
+  %\VignetteIndexEntry{stoRy}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+## Background
+
+The *Theme Ontology Project* is an open access, community-based fiction
+studies undertaking to
+* define common literary themes (or "themes" for short),
+* classify defined themes into a hierarchically structured
+controlled-vocabulary, and
+* annotate works of fiction with the themes within a collaborative framework.
+The LTO refers to the hierarchically structured collection of literary themes
+[@Sheridan2019b]. The current developmental version of the LTO contains over
+3,000 carefully defined themes. To date over 3,000 stories (e.g., films,
+novels, TV series episodes, video game plots, etc.) have been annotated with
+LTO themes. All data is hosted on the Theme Ontology GitHub repository
+[theming](https://github.com/theme-ontology/theming). It can be explored on
+the Theme Ontology [website](https://www.themeontology.org/). The `stoRy`
+package is used to perform various statistical analyses on the data. These
+tells us interesting things about the kind of stories we humans invent.
+
+
+## Installation
+
+The package is hosted on CRAN and can be installed by running the command
+
+```{r setup}
+library(stoRy)
+```
+
+The developmental version is hosted on GitHub and can be installed using the
+devtools package:
+
+
+```{r}
+# install.packages("devtools")
+# devtools::install_github("theme-ontology/stoRy")
+```
+
+Once installed, the package can be loaded by running the standard library
+command
+
+```{r}
+library(stoRy)
+```
+
+
+## Accessing Documentation
+
+Each function in the package is documented. The command
+
+```{r}
+help(package = "stoRy")
+```
+
+gives a cursory overview of the package and a complete list of package
+functions.
+
+Help with using functions is obtained in the usual R manner. For instance,
+the documentation for the `get_similar_stories` function can be accessed
+with the command
+
+```{r}
+?get_similar_stories
+```
+
+The command
+
+```{r}
+citation("stoRy")
+```
+
+prints to console everything needed to cite the package in a publication.
+
+
+## Quick Start: The Twilight Zone Franchise Demo Data
+
+This section is a good starting point for first time users. Included in the
+package is a toy dataset, extracted from the latest LTO version, comprising
+some 2,872 LTO themes and 335 thematically annotated *The Twilight Zone*
+American media franchise stories [@Wikipedia2021].
+
+The themes are hierarchically arranged into four domains descended from an
+abstract root theme:
+```
+literary thematic entity
+├── the human condition
+├── society
+├── the pursuit of knowledge
+└── speculative fiction theme
+```
+
+Contained in the demo data are the following *Twilight Zone* thematically
+annotated stories:
+
+* 156 *The Twilight Zone* (1959) television series episodes
+
+* 3 *Twilight Zone: The Movie* (1983) film sub-stories
+
+* 110 *The Twilight Zone* (1985) television series episodes
+
+* 3 *Twilight Zone: Rod Serling's Lost Classics* (1994) film sub-stories
+
+* 43 *The Twilight Zone* (2002) television series episodes
+
+* 20 *The Twilight Zone* (2019) television series episodes
+
+Users may avail themselves of the demo data to experiment with package
+functions without having to download any official LTO version data to their
+local machine.
+
+
+To begin check that the `demo` LTO version is active
+```{r}
+which_lto()
+```
+
+Should it be that another LTO version is actively loaded, switch to the `demo`
+version 
+```{r}
+set_lto(version = "demo")
+```
+
+Print LTO `demo` version summary information to console 
+```{r}
+print_lto()
+```
+
+A detailed description of the demo data included in the package can be viewed
+by running the command
+
+```{r}
+?`lto-demo`
+```
+
+**Pro Tip**: The demo data, and LTO version data more generally, is internally
+stored in such a way that prohibits users from modifying it. The following
+sequence of commands, however, clones the data:
+
+```{r}
+demo_metadata_tbl <- clone_active_metadata_tbl()
+demo_themes_tbl <- clone_active_themes_tbl()
+demo_stories_tbl <- clone_active_stories_tbl()
+demo_collections_tbl <- clone_active_collections_tbl()
+```
+
+See `?lto-demo` for more details on exploring the output tibble contents.
+
+
+### Example: Initialize a Theme
+
+The social phenomenon of dangers, be they real or imagined, spreading through
+a community as a result of rumors and fear is explored in numerous works of
+fiction, including several *Twilight Zone* episodes.
+
+The LTO captures hysteria of this kind with the theme
+[mass hysteria](https://themeontology.org/theme.php?name=mass%20hysteria). To
+explore "mass hysteria" theme ("demo" version) initialize the `Theme` class
+object
+```{r}
+theme <- Theme$new(theme_name = "mass hysteria")
+```
+
+The theme entry can be printed to console in two ways
+```{r}
+# Print stylized text:
+theme
+
+# Print in plain text .th.txt file format:
+theme$print(canonical = TRUE)
+```
+
+Story thematic annotations are stored as a tibble
+```{r}
+theme$annotations()
+```
+
+See `?Theme` for more on `Theme` class objects.
+
+**A Note on Finding Themes**: LTO developmental themes are easily explored
+using the [theme search box](https://themeontology.org/themes) on the project
+website. Chances are that any theme found in the developmental version will
+also exist in the demo version. So searching for themes on the website offers
+a practical approach to finding interesting themes to initialize in an R
+session.
+
+**Pro Tip**: Demo version themes are explorable in tibble format. For example,
+here is one way to search for "mass hysteria" directly in the demo themes:
+```{r}
+# install.packages("dplyr")
+suppressMessages(library(dplyr))
+# install.packages("stringr")
+library(stringr)
+demo_themes_tbl <- clone_active_themes_tbl()
+demo_themes_tbl %>% filter(str_detect(theme_name, "mass"))
+```
+Notice that all themes containing the substring `"mass"` are returned. The
+`dplyr` package is required to run the `%>%` mediated pipeline.
+
+
+### Example: Initialize a Story
+
+Thematically annotated stories are initialized by story ID. For example, run
+```{r}
+story <- Story$new(story_id = "tz1959e1x22")
+```
+to initialize a `Story` class object representing the "mass hysteria"
+featuring classic *Twilight Zone* (1959) television series episode *The
+Monsters Are Due on Maple Street*.
+
+Story thematic annotations along with episode identifying metadata can be
+printed to console
+```{r}
+# In stylized text format:
+story
+
+# In plain text .st.txt file format:
+story$print(canonical = TRUE)
+```
+
+A tibble of thematic annotations is obtained by running
+```{r}
+themes <- story$themes()
+themes
+```
+
+See `?Theme` for more on `Theme` class objects.
+
+**A Note on Finding Story IDs**: The project website
+[story search box](https://themeontology.org/stories) offers a
+quick-and-dirty way of locating LTO developmental version story IDs of
+interest. Since story IDs are stable, developmental version *The Twilight
+Zone* story IDs can be expected to agree with their demo data counterparts.
+
+**Pro Tip**: A demo data story ID is directly obtained from an episode title
+as follows:
+```{r}
+title <- "The Monsters Are Due on Maple Street"
+demo_stories_tbl <- clone_active_stories_tbl()
+story_id <- demo_stories_tbl %>% filter(title == !!title) %>% pull(story_id)
+story_id
+```
+The `dplyr` package is again required to run the `%>%` mediated pipeline.
+
+
+### Example: Initialize a Collection
+
+Each story belongs to at least one collection (i.e. a set of related stories).
+*The Monsters Are Due on Maple Street*, for instance, belongs to the two
+collections
+```{r}
+story$collections()
+```
+
+To initialize a `Collection` class object for *The Twilight Zone* (1959)
+television series, of which *The Monsters Are Due on Maple Street* is an
+episode, run:
+```{r}
+collection <- Collection$new(collection_id = "Collection: tvseries: The Twilight Zone (1959)")
+```
+
+Collection info is printed to console in the same way as with themes and
+stories
+```{r}
+# Print stylized text:
+collection
+
+# Print in plain text .st.txt file format:
+collection$print(canonical = TRUE)
+```
+
+**A Note on Finding Collection IDs**: As with stories, LTO developmental
+version collections can be explored from the project website
+[story search box](https://themeontology.org/stories). Developmental and demo
+version collection IDs should generally match up. This is in particular the
+case with *Twilight Zone* collection IDs.
+
+**Pro Tip**: Demo version collections can be directly explored in the usual
+way
+```{r}
+demo_collections_tbl <- clone_active_collections_tbl()
+demo_collections_tbl
+```
+
+
+### Example: Find the Topmost Featured Themes in a Collection
+
+To view the top 10 most featured themes in the *The Twilight Zone* (1959)
+series run:
+```{r}
+collection <- Collection$new(collection_id = "Collection: tvseries: The Twilight Zone (1959)")
+result_tbl <- get_featured_themes(collection)
+result_tbl
+```
+
+To view the top 10 most featured themes in the demo data as a whole run
+```{r}
+result_tbl <- get_featured_themes()
+result_tbl
+```
+
+### Example: Find the Topmost Enriched Themes in a Collection
+
+To view the top 10 most enriched, or over-represented themes in *The Twilight
+Zone* (1959) series with all *The Twilight Zone* stories as background run
+```{r}
+test_collection <- Collection$new(collection_id = "Collection: tvseries: The Twilight Zone (1959)")
+result_tbl <- get_enriched_themes(test_collection)
+result_tbl
+```
+
+To run the same analysis not counting *minor* level themes run
+```{r}
+result_tbl <- get_enriched_themes(test_collection, weights = list(choice = 1, major = 1, minor = 0))
+result_tbl
+```
+
+The theory and methods implemented in the `get_enriched_themes` function
+are described in [@Onsjo2020].
+
+
+### Example: Find Similar Stories to a Story of Interest
+
+To view the top 10 most thematically similar *Twilight Zone* franchise
+stories to *The Monsters Are Due on Maple Street* run
+```{r}
+query_story <- Story$new(story_id = "tz1959e1x22")
+result_tbl <- get_similar_stories(query_story)
+result_tbl
+``` 
+
+The theory and methods implemented in the `get_enriched_themes` function
+are described in [@Sheridan2019a].
+
+
+### Example : Find Clusters of Similar Stories
+
+Cluster *The Twilight Zone* franchise stories according to thematic
+similarity by running
+```{r, eval = FALSE}
+set.seed(123)
+result_tbl <- get_story_clusters()
+result_tbl
+```
+The command `set.seed(123)` is run here for the purpose of reproducibility.
+
+Explore a cluster of stories related to executions
+```{r, eval = FALSE}
+cluster_id <- 8
+pull(result_tbl, stories)[[cluster_id]]
+pull(result_tbl, themes)[[cluster_id]]
+```
+
+Explore a cluster of stories related to old people wanting to be young
+```{r, eval = FALSE}
+cluster_id <- 10
+pull(result_tbl, stories)[[cluster_id]]
+pull(result_tbl, themes)[[cluster_id]]
+```
+
+Explore a cluster of stories related to space aliens
+```{r, eval = FALSE}
+cluster_id <- 13
+pull(result_tbl, stories)[[cluster_id]]
+pull(result_tbl, themes)[[cluster_id]]
+```
+
+Explore a cluster of stories related to wish making
+```{r, eval = FALSE}
+cluster_id <- 15
+pull(result_tbl, stories)[[cluster_id]]
+pull(result_tbl, themes)[[cluster_id]]
+```
+
+## Download and Configure LTO Version Data
+
+The package works with data from these LTO versions
+```{r, eval = FALSE}
+lto_version_statuses()
+```
+
+### Example: Download and Configure the Latest LTO Version
+
+To download and cache the latest versioned LTO release run
+```{r, eval = FALSE}
+configure_lto(version = "latest")
+```
+This can take awhile.
+
+Load the newly configured LTO version as the active version in the R session:
+```{r, eval = FALSE}
+set_lto(version = "latest")
+```
+
+To double check that it has been loaded successfully run
+```{r, eval = FALSE}  
+which_lto()
+```
+
+Now that the latest LTO version is loaded into the R session, its stories and
+themes can be analyzed in the same way as with the "demo" LTO version data as
+shown above.
+
+
+## References

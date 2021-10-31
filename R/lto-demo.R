@@ -1,0 +1,113 @@
+#' LTO demo data
+#'
+#' @description
+#' A family of datasets extracted from \acronym{LTO} v0.3.3, comprising 2872  
+#' \acronym{LTO} themes and 335 thematically annotated \emph{The Twilight 
+#' Zone} American media franchise stories.
+#' 
+#' Found in the data are thematic annotations for
+#' \itemize{
+#'    \item 156 \emph{The Twilight Zone} (1959) television series episodes
+#'    \item 3 \emph{Twilight Zone: The Movie} (1983) film sub-stories
+#'    \item 110 \emph{The Twilight Zone} (1985) television series episodes
+#'    \item 3 \emph{Twilight Zone: Rod Serling's Lost Classics} (1994) film
+#'      sub-stories
+#'    \item 43 \emph{The Twilight Zone} (2002) television series episodes
+#'    \item 20 \emph{The Twilight Zone} (2019) television series episodes
+#' }
+#' @name lto-demo
+#' @docType data
+#' @format The data consists of four `tibble` class objects:
+#' \enumerate{
+#'   \item \code{metadata_tbl}: a `tibble` of \acronym{LTO} demo data summary
+#'   information with 7 rows and 2 columns:
+#'   \tabular{ll}{
+#'     name: \tab Metadatum name (e.g. version, encoding, etc.)\cr
+#'     value: \tab Metadatum value (e.g. "demo", "UTF-8", etc.)\cr
+#'   }
+#'   \item \code{themes_tbl}: a `tibble` of \acronym{LTO} demo data themes
+#'   with 2872 rows (themes) and 11 columns:
+#'   \tabular{ll}{
+#'     theme_index: \tab Integer ID (unique)\cr
+#'     theme_name: \tab Theme name (unique)\cr
+#'     description: \tab Theme definition\cr
+#'     notes: \tab Theme definition elaborations and caveats\cr
+#'     aliases: \tab Theme name aliases\cr
+#'     template: \tab Theme special cases\cr
+#'     parents: \tab Parent themes\cr
+#'     ancestors: \tab Ancestor themes\cr
+#'     examples: \tab Example usages\cr
+#'     references: \tab Reference URLs\cr
+#'     source: \tab Path to file where theme is defined\cr
+#'   }
+#'   \item \code{stories_tbl}: a `tibble` of \acronym{LTO} demo data stories
+#'   with 335 rows (stories) and 10 columns:
+#'   \tabular{ll}{
+#'     story_index: \tab Integer ID (unique)\cr
+#'     story_id: \tab Story ID (unique)\cr
+#'     title: \tab Official title\cr
+#'     date: \tab Release date\cr
+#'     description: \tab Information used for identifying the story\cr
+#'     component_story_ids: \tab Sub-story story IDs (used for frame
+#'       stories)\cr
+#'     collections: \tab Collection IDs of collections to which the story
+#'       belongs\cr
+#'     references: \tab Reference URLs\cr
+#'     themes: \tab Thematic annotations\cr
+#'     source: \tab Path to file where story is defined\cr
+#'   }
+#'   \item \code{collections_tbl}: a `tibble` of \acronym{LTO} demo data
+#'   collections with 5 rows (story collections) and 9 columns:
+#'   \tabular{ll}{
+#'     collection_index: \tab Integer ID (unique)\cr
+#'     collection_id: \tab Collection ID (unique)\cr
+#'     title: \tab The collection ID stripped of all colon separated
+#'       prefixes\cr
+#'     date: \tab Earliest and latest dates of stories in the collection\cr
+#'     description: \tab Minimal information defining the collection\cr
+#'     component_story_ids: \tab Story IDs of member stories of the 
+#'       collection\cr
+#'     references: \tab Reference URLs\cr
+#'     themes: \tab Collection level thematic annotations\cr
+#'     source: \tab Path to file where collection is defined\cr
+#'   }
+#' }
+#' @note
+#' The data is stored internally in the package \file{R/sysdata.rda} file and
+#' cannot be accessed directly. Check the examples below for more on how to
+#' best explore the data.
+#' @source
+#' Theme Ontology. (2021, October 31). LTO v0.3.3. \url{https://github.com/theme-ontology/theming/releases/tag/v0.3.3}
+#' @references
+#' The Twilight Zone. (2021, July 25). In Wikipedia \url{https://en.wikipedia.org/wiki/The_Twilight_Zone}
+#' @keywords datasets
+#' @examples
+#' # Print a copy of LTO demo version metadata to console:
+#' set_lto("demo")
+#' demo_metadata_tbl <- clone_active_metadata_tbl()
+#' demo_metadata_tbl
+#'
+#' # Print a copy of LTO demo themes to console:
+#' set_lto("demo")
+#' demo_themes_tbl <- clone_active_themes_tbl()
+#' demo_themes_tbl
+#'
+#' # Print a copy of LTO demo stories to console:
+#' set_lto("demo")
+#' demo_stories_tbl <- clone_active_stories_tbl()
+#' demo_stories_tbl
+#'
+#' # Print a copy of LTO demo collections to console:
+#' set_lto("demo")
+#' demo_collections_tbl <- clone_active_collections_tbl()
+#' demo_collections_tbl
+#' # Print collection IDs to console:
+#' demo_collections_tbl$collection_id
+#' # Print The Twilight Zone (2019) component story IDs to console:
+#' library(dplyr)
+#' collection_id <- "Collection: tvseries: The Twilight Zone (2019)"
+#' demo_collections_tbl %>%
+#'   filter(collection_id %in% !!collection_id) %>%
+#'   pull(component_story_ids) %>%
+#'   unlist(use.names = FALSE)
+NULL

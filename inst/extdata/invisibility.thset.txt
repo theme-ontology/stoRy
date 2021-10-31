@@ -1,0 +1,13 @@
+Themeset: invisibility
+======================
+
+:: Description
+Themes related to objects, especially people, being rendered invisible to the
+eye through the use of fantastical or technological means.
+
+:: Component Themes
+invisibility ability
+invisibility technology
+invisible spaceship
+personal invisibility cloak
+planetary invisibility cloak

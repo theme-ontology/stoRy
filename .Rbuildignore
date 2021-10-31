@@ -1,0 +1,11 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.Rhistory
+^cran-comments\.md$
+data-raw
+^doc$
+^Meta$
+^README\.Rmd$
+^\.github$
+^man-roxygen
+^codecov\.yml$
