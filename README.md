@@ -3,9 +3,9 @@
 
 # stoRy
 
-change to test <!-- badges: start -->
+<!-- badges: start -->
 [![R-CMD-check](https://github.com/theme-ontology/stoRy/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/theme-ontology/stoRy/actions/workflows/R-CMD-check.yaml)
-[![Codecov test coverage](https://app.codecov.io/gh/theme-ontology/stoRy/branch/master/graph/badge.svg)](https://app.codecov.io/gh/theme-ontology/stoRy?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/theme-ontology/stoRy/branch/master/graph/badge.svg)](https://codecov.io/gh/theme-ontology/stoRy?branch=master)
 [![Life cycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/stoRy)](https://cran.r-project.org/package=stoRy)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/stoRy?color=green)](https://cran.r-project.org/package=stoRy)
