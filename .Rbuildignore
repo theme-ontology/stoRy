@@ -9,3 +9,5 @@ data-raw
 ^\.github$
 ^man-roxygen
 ^codecov\.yml$
+^CRAN-RELEASE$
+^LICENSE$
