@@ -240,6 +240,7 @@ Cluster *The Twilight Zone* franchise stories according to thematic
 similarity:
 
 ``` r
+# install.packages("isa2")
 library(dplyr)
 set.seed(123)
 result_tbl <- get_story_clusters()
@@ -248,18 +249,26 @@ result_tbl
 
 The command `set.seed(123)` is run here for the sake of reproducibility.
 
-Explore a cluster of stories related to executions:
+Explore a cluster of stories related to traveling back in time:
 
 ``` r
-cluster_id <- 8
+cluster_id <- 3
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 ```
 
-Explore a cluster of stories related to old people wanting to be young:
+Explore a cluster of stories related to mass panics:
 
 ``` r
-cluster_id <- 10
+cluster_id <- 5
+pull(result_tbl, stories)[[cluster_id]]
+pull(result_tbl, themes)[[cluster_id]]
+```
+
+Explore a cluster of stories related to executions:
+
+``` r
+cluster_id <- 7
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 ```
@@ -267,7 +276,15 @@ pull(result_tbl, themes)[[cluster_id]]
 Explore a cluster of stories related to space aliens:
 
 ``` r
-cluster_id <- 13
+cluster_id <- 10
+pull(result_tbl, stories)[[cluster_id]]
+pull(result_tbl, themes)[[cluster_id]]
+```
+
+Explore a cluster of stories related to old people wanting to be young:
+
+``` r
+cluster_id <- 11
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 ```
@@ -275,7 +292,7 @@ pull(result_tbl, themes)[[cluster_id]]
 Explore a cluster of stories related to wish making:
 
 ``` r
-cluster_id <- 15
+cluster_id <- 13
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 ```
