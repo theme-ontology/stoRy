@@ -14,9 +14,9 @@ Authors@R:
       person(given = "Mikael",
              family = "Onsjö",
              role = "aut"))
-Description: Download, explore, and analyze Literary Theme Ontology (LTO)
-    themes and thematically annotated story data. To learn more about the
-    LTO project visit <https://github.com/theme-ontology/theming> and
+Description: Download, explore, and analyze Literary Theme Ontology themes
+    and thematically annotated story data. To learn more about the project
+    visit <https://github.com/theme-ontology/theming> and
     <https://themeontology.org>.
 License: GPL-3
 URL: https://github.com/theme-ontology/stoRy,
@@ -30,7 +30,6 @@ Imports:
     dplyr,
     fansi,
     httr,
-    isa2,
     lifecycle,
     purrr,
     R6,
@@ -45,6 +44,7 @@ Imports:
 Suggests:
     covr,
     curl,
+    isa2,
     jsonlite,
     knitr,
     progress,
