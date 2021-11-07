@@ -27,6 +27,9 @@
 #' implemented in the \code{isa2} R package. The clusters are "soft" meaning
 #' that a story can appear in multiple clusters.
 #'
+#' Install \code{isa2} package by running the command
+#' \code{install.packages(\"isa2\")} before calling this function.
+#'
 #' @references
 #' Gábor Csárdi, Zoltán Kutalik, Sven Bergmann (2010). Modular analysis of
 #' gene expression data with R. \emph{Bioinformatics}, 26, 1376-7.
@@ -44,7 +47,6 @@
 #' @template min_freq-arg
 #' @param min_size Minimum cluster size. The default is `min_size=3`.
 #' @template blacklist-arg
-#' @importFrom isa2 isa
 #' @export
 #' @examples \dontrun{
 #' # Cluster "The Twilight Zone" franchise stories according to thematic
@@ -55,23 +57,33 @@
 #' result_tbl <- get_story_clusters()
 #' result_tbl
 #'
-#' # Explore a cluster of stories related to executions:
-#' cluster_id <- 8
+#' # Explore a cluster of stories related to traveling back in time:
+#' cluster_id <- 3
 #' pull(result_tbl, stories)[[cluster_id]]
 #' pull(result_tbl, themes)[[cluster_id]]
 #'
-#' # Explore a cluster of stories related to old people wanting to be young:
-#' cluster_id <- 10
+#' # Explore a cluster of stories related to mass panics:
+#' cluster_id <- 5
+#' pull(result_tbl, stories)[[cluster_id]]
+#' pull(result_tbl, themes)[[cluster_id]]
+#'
+#' # Explore a cluster of stories related to executions:
+#' cluster_id <- 7
 #' pull(result_tbl, stories)[[cluster_id]]
 #' pull(result_tbl, themes)[[cluster_id]]
 #'
 #' # Explore a cluster of stories related to space aliens:
-#' cluster_id <- 13
+#' cluster_id <- 10
+#' pull(result_tbl, stories)[[cluster_id]]
+#' pull(result_tbl, themes)[[cluster_id]]
+#'
+#' # Explore a cluster of stories related to old people wanting to be young:
+#' cluster_id <- 11
 #' pull(result_tbl, stories)[[cluster_id]]
 #' pull(result_tbl, themes)[[cluster_id]]
 #'
 #' # Explore a cluster of stories related to wish making:
-#' cluster_id <- 15
+#' cluster_id <- 13
 #' pull(result_tbl, stories)[[cluster_id]]
 #' pull(result_tbl, themes)[[cluster_id]]
 #' }
@@ -141,10 +153,11 @@ get_story_clusters = function(
   # Excise themes that fall below the minimum occurrence threshold, if any
   if (isTRUE(min_freq > 1)) {
     theme_counts <- table(collection_theme_usages_tbl$theme_name)
-    low_frequency_themes <- theme_counts[which(theme_counts <= min_freq)]
-    if (isTRUE(length(low_frequency_themes) > 0)) {
+    high_frequency_theme_names <-
+      names(theme_counts[which(theme_counts >= min_freq)])
+    if (isTRUE(length(high_frequency_theme_names) > 0)) {
       collection_theme_usages_tbl <- collection_theme_usages_tbl %>%
-      filter(.data$theme_name %in% !!low_frequency_themes)
+        filter(.data$theme_name %in% high_frequency_theme_names)
     }
   }
 
@@ -169,7 +182,7 @@ get_story_clusters = function(
   # Initialize theme in story matrix
   theme_names <- unique(collection_theme_usages_tbl$theme_name)
   M <- length(theme_names)
-  story_ids <- pull(collection$component_story_ids())
+  story_ids <- collection_theme_usages_tbl$story_id
   N <- length(story_ids)
   data <- collection_theme_usages_tbl %>%
     arrange(.data$theme_name, .data$story_id) %>%
@@ -181,14 +194,26 @@ get_story_clusters = function(
     column_to_rownames(var = 'theme_name') %>%
     as.matrix()
   
-  # Calculate story clusters 
-  isa_result <- isa(data)
+  # If `isa2` package is installed calculate story clusters;
+  # otherwise stop here
+  if(requireNamespace("isa2", quietly = TRUE)) {
+    isa_result <- isa2::isa(data)
+  } else {
+    message <- str_glue(
+      "The `isa2` package was not found.\n",
+      "{col_red(symbol$cross)} The `isa2` package must be installed to run this function.\n",
+      "{col_yellow(symbol$info)} Run 'install.packages(\"isa2\")' to install the package."
+    )
+    abort(message)
+  }
 
   # Process results and return 
   no_of_clusters <- ncol(isa_result$columns)
   cluster_sizes <- numeric(no_of_clusters)
   stories_lst <- vector("list", length = no_of_clusters)
   themes_lst <- vector("list", length = no_of_clusters)
+  story_ids <- colnames(data)
+  theme_names <- rownames(data)
   for (i in 1 : no_of_clusters) {
     col_indices <- which(isa_result$columns[, i] > 0)
     cluster_size <-  length(col_indices)
