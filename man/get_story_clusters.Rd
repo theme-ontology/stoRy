@@ -31,8 +31,7 @@ regardless of level. At least one weight must be positive.}
 thematic annotations.}
 
 \item{min_freq}{Drop themes occurring less than this number of times from
-the analysis. The default \code{min_occurrence=1} results in no themes are
-discarded.}
+the analysis. The default \code{min_freq=1} results in no themes are discarded.}
 
 \item{min_size}{Minimum cluster size. The default is \code{min_size=3}.}
 
@@ -68,6 +67,9 @@ The function classifies the stories according to thematic similarity
 using the Iterative Signature Algorithm (ISA) biclustering algorithm as
 implemented in the \code{isa2} R package. The clusters are "soft" meaning
 that a story can appear in multiple clusters.
+
+Install \code{isa2} package by running the command
+\code{install.packages(\"isa2\")} before calling this function.
 }
 \examples{
 \dontrun{
@@ -79,23 +81,33 @@ set.seed(123)
 result_tbl <- get_story_clusters()
 result_tbl
 
-# Explore a cluster of stories related to executions:
-cluster_id <- 8
+# Explore a cluster of stories related to traveling back in time:
+cluster_id <- 3
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 
-# Explore a cluster of stories related to old people wanting to be young:
-cluster_id <- 10
+# Explore a cluster of stories related to mass panics:
+cluster_id <- 5
+pull(result_tbl, stories)[[cluster_id]]
+pull(result_tbl, themes)[[cluster_id]]
+
+# Explore a cluster of stories related to executions:
+cluster_id <- 7
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 
 # Explore a cluster of stories related to space aliens:
-cluster_id <- 13
+cluster_id <- 10
+pull(result_tbl, stories)[[cluster_id]]
+pull(result_tbl, themes)[[cluster_id]]
+
+# Explore a cluster of stories related to old people wanting to be young:
+cluster_id <- 11
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 
 # Explore a cluster of stories related to wish making:
-cluster_id <- 15
+cluster_id <- 13
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 }

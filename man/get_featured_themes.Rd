@@ -36,8 +36,7 @@ regardless of level. At least one weight must be positive.}
 thematic annotations.}
 
 \item{min_freq}{Drop themes occurring less than this number of times from
-the analysis. The default \code{min_occurrence=1} results in no themes are
-discarded.}
+the analysis. The default \code{min_freq=1} results in no themes are discarded.}
 
 \item{blacklist}{A \code{\link[=Themeset]{Themeset()}} class object. A themeset containing themes
 to be dropped from the analysis.

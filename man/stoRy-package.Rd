@@ -6,7 +6,7 @@
 \alias{stoRy-package}
 \title{stoRy: Download, Explore, and Analyze Literary Theme Ontology Data}
 \description{
-Download, explore, and analyze Literary Theme Ontology (LTO) themes and thematically annotated story data. To learn more about the LTO project visit <https://github.com/theme-ontology/theming> and <https://themeontology.org>.
+Download, explore, and analyze Literary Theme Ontology themes and thematically annotated story data. To learn more about the project visit <https://github.com/theme-ontology/theming> and <https://themeontology.org>.
 }
 \details{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
