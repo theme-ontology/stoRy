@@ -4,12 +4,11 @@ library(tidyjson)
 library(dplyr)
 library(tibble)
 library(rappdirs)
-package_version <- "temp"
 lto_version <- "v0.3.3"
-root <- "/Users/Paul/Dropbox/theme-ontology/" # Local path to "stoRy-package" parent folder
+root <- "/Users/Paul/Desktop/theme-ontology/stoRy/" # Local path to "stoRy-package" folder
 cache_path <- file.path(user_cache_dir("stoRy"), lto_version)
-working_dir <- paste0(root, "stoRy-", package_version, "/data-raw/")
-output_dir <- paste0(root, "stoRy-", package_version, "/R/")
+working_dir <- paste0(root, "data-raw/")
+output_dir <- paste0(root, "R/")
 setwd(working_dir)
 
 # Demo data collections
@@ -89,9 +88,9 @@ saveRDS(metadata_tbl, file = out_file_path, compress = TRUE)
 library(stringr)
 library(crayon)
 library(tidyr)
-source(paste0(root, "stoRy-", package_version, "/R/def_collection.R"))
-source(paste0(root, "stoRy-", package_version, "/R/options.R"))
-source(paste0(root, "stoRy-", package_version, "/R/set_active_version.R"))
+source(paste0(root, "R/def_collection.R"))
+source(paste0(root, "R/options.R"))
+source(paste0(root, "R/set_active_version.R"))
 background_collection <- Collection$new(collection_id = "Collection: All Twilight Zone Stories")
 out_file_path <- file.path(working_dir, "background_collection.Rds")
 saveRDS(background_collection, file = out_file_path, compress = TRUE)
@@ -115,10 +114,4 @@ system(paste0("rm ", working_dir, "stories_tbl.Rds"))
 write(toJSON(themes_tbl), file = paste0(working_dir, "demo_themes.JSON"))
 system(paste0("rm ", working_dir, "themes_tbl.Rds"))
 system(paste0("rm ", working_dir, "background_collection.Rds"))
-
-
-
-
-
-
 
