@@ -369,30 +369,44 @@ result_tbl
 ```
 The command `set.seed(123)` is run here for the purpose of reproducibility.
 
-Explore a cluster of stories related to executions
+Explore a cluster of stories related to traveling back in time
 ```{r, eval = FALSE}
-cluster_id <- 8
+cluster_id <- 3
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 ```
 
-Explore a cluster of stories related to old people wanting to be young
+Explore a cluster of stories related to mass panics
 ```{r, eval = FALSE}
-cluster_id <- 10
+cluster_id <- 5
+pull(result_tbl, stories)[[cluster_id]]
+pull(result_tbl, themes)[[cluster_id]]
+```
+
+Explore a cluster of stories related to executions
+```{r, eval = FALSE}
+cluster_id <- 7
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 ```
 
 Explore a cluster of stories related to space aliens
 ```{r, eval = FALSE}
-cluster_id <- 13
+cluster_id <- 10
+pull(result_tbl, stories)[[cluster_id]]
+pull(result_tbl, themes)[[cluster_id]]
+```
+
+Explore a cluster of stories related to old people wanting to be young
+```{r, eval = FALSE}
+cluster_id <- 11
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 ```
 
 Explore a cluster of stories related to wish making
 ```{r, eval = FALSE}
-cluster_id <- 15
+cluster_id <- 13
 pull(result_tbl, stories)[[cluster_id]]
 pull(result_tbl, themes)[[cluster_id]]
 ```
