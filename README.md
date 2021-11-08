@@ -53,7 +53,7 @@ Get a feel for the demo data by printing some basic information about it
 to console:
 
 ``` r
-print_lto(version = "demo")
+print_lto()
 ```
 
 See the demo data help page for a more in depth description:
