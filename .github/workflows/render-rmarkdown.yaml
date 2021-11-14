@@ -27,6 +27,10 @@ jobs:
         run: |
           Rscript -e 'if(!require('rmarkdown')){install.packages("rmarkdown")}'
 
+      - name: Install stoRy package
+        run: |
+          Rscript -e 'if(!require('stoRy')){install.packages("stoRy")}'
+
       - name: Render Rmarkdown files
         run: |
           RMD_PATH=($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$'))
