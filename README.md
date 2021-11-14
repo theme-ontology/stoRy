@@ -15,7 +15,7 @@
 stoRy is a [Tidyverse](https://www.tidyverse.org) friendly package for
 downloading, exploring, and analyzing [Literary Theme
 Ontology](https://themeontology.org/) (LTO) data in **R**.
-
+test change
 ## Installation
 
 ``` r
