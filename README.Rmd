@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
 
 # stoRy
 This is a test line
+This is another test line.
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/theme-ontology/stoRy/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/theme-ontology/stoRy/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
