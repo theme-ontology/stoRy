@@ -241,7 +241,7 @@ similarity:
 
 ``` r
 # install.packages("isa2")
-library(dplyr)
+library(isa2)
 set.seed(123)
 result_tbl <- get_story_clusters()
 result_tbl
