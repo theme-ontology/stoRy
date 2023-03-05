@@ -8,8 +8,8 @@
 
 random_tip <- function() {
   tips <- c(
-    "Explore the themes at https://themeontology.org/themes",
-    "Peruse the thematically annotated stories at https://themeontology.org/stories",
+    "Explore the themes at https://www.themeontology.org/themes",
+    "Peruse the thematically annotated stories at https://www.themeontology.org/stories",
     "Visit the Theme Ontology GitHub page at https://github.com/theme-ontology",
     "Learn more about the underlying theory at https://github.com/theme-ontology/theming",
     "Use suppressPackageStartupMessages() to eliminate package startup messages",
