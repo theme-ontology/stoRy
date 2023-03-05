@@ -114,7 +114,7 @@ themes
 #### Exploring the Demo Themes
 
 *The Monsters Are Due on Maple Street* is a story about how [mass
-hysteria](https://www.themeontology.org/theme.php?name=mass%20hysteria) can
+hysteria](https://www.themeontology.org/theme/mass%20hysteria) can
 transform otherwise normal people into an angry mob. To view the *mass
 hysteria* theme entry, initialize a `Theme` object with `theme_name`
 argument defined accordingly:
