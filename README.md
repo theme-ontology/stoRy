@@ -33,7 +33,7 @@ The easiest way to get started with stoRy is to make use of the LTO demo
 version data. It consists of the themes and 335 thematically annotated
 [The Twilight Zone](https://en.wikipedia.org/wiki/The_Twilight_Zone)
 American media franchise stories from the latest [LTO
-version](https://themeontology.org/pub/data/).
+version](https://www.themeontology.org/data).
 
 Begin by loading the stoRy package:
 
@@ -86,7 +86,7 @@ story$print(canonical = TRUE)
 
 There are two complementary ways of going about finding story IDs.
 First, the LTO website [story search
-box](https://themeontology.org/stories) offers a quick-and-dirty way of
+box](https://www.themeontology.org/stories) offers a quick-and-dirty way of
 locating LTO developmental version story IDs of interest. Since story
 IDs are stable, developmental version *The Twilight Zone* story IDs can
 be expected to agree with their demo data counterparts. Alternatively, a
@@ -114,7 +114,7 @@ themes
 #### Exploring the Demo Themes
 
 *The Monsters Are Due on Maple Street* is a story about how [mass
-hysteria](https://themeontology.org/theme.php?name=mass%20hysteria) can
+hysteria](https://www.themeontology.org/theme.php?name=mass%20hysteria) can
 transform otherwise normal people into an angry mob. To view the *mass
 hysteria* theme entry, initialize a `Theme` object with `theme_name`
 argument defined accordingly:
@@ -133,7 +133,7 @@ theme$annotations()
 
 As with story IDs, there are two ways to look for themes of interest.
 Developmental version themes are searchable from LTO website [theme
-search box](https://themeontology.org/themes). Demo version themes are
+search box](https://www.themeontology.org/themes). Demo version themes are
 explorable in tibble format. For example, here is one way to search for
 *mass hysteria* directly in the demo themes:
 
@@ -173,7 +173,7 @@ collection$print(canonical = TRUE)
 ```
 
 In general, developmental version collections can be explored from the
-LTO website [story search box](https://themeontology.org/stories) or
+LTO website [story search box](https://www.themeontology.org/stories) or
 through the package in the usual way:
 
 ``` r
