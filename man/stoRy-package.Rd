@@ -6,7 +6,7 @@
 \alias{stoRy-package}
 \title{stoRy: Download, Explore, and Analyze Literary Theme Ontology Data}
 \description{
-Download, explore, and analyze Literary Theme Ontology themes and thematically annotated story data. To learn more about the project visit <https://github.com/theme-ontology/theming> and <https://themeontology.org>.
+Download, explore, and analyze Literary Theme Ontology themes and thematically annotated story data. To learn more about the project visit \url{https://github.com/theme-ontology/theming} and \url{https://www.themeontology.org}.
 }
 \details{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#stable}{\figure{lifecycle-stable.svg}{options: alt='[Stable]'}}}{\strong{[Stable]}}
@@ -23,7 +23,7 @@ General resources:
 \itemize{
 \item stoRy package GitHub repository:
 \url{https://github.com/theme-ontology/stoRy}
-\item \acronym{LTO} project website: \url{https://themeontology.org}
+\item \acronym{LTO} project website: \url{https://www.themeontology.org}
 \item \acronym{LTO} project GitHub repositories: \url{https://github.com/theme-ontology}
 \item \href{http://ceur-ws.org/Vol-2518/paper-WODHSA8.pdf}{LTO conference paper}
 in \emph{Proceedings of the Joint Ontology Workshops 2019 Episode V: The
@@ -35,7 +35,7 @@ Useful links:
 \itemize{
   \item \url{https://github.com/theme-ontology/stoRy}
   \item \url{https://github.com/theme-ontology/theming}
-  \item \url{https://themeontology.org/}
+  \item \url{https://www.themeontology.org/}
   \item Report bugs at \url{https://github.com/theme-ontology/stoRy/issues}
 }
 

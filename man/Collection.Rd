@@ -19,7 +19,7 @@ is the LTO \code{demo} version by default. Run \code{\link[=which_lto]{which_lto
 version is active in your R session.
 
 Search the latest LTO \code{dev} version collections on the Theme Ontology
-website at \url{https://themeontology.org/stories}.
+website at \url{https://www.themeontology.org/stories}.
 
 Alternatively, it is possible to read in a user-defined collection from
 file. In this case, the collection ID as defined in the file must match the
@@ -108,24 +108,24 @@ Use \code{\link[=Themeset]{Themeset()}} to initialize a set of related LTO theme
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{Collection$new()}}
-\item \href{#method-collection_id}{\code{Collection$collection_id()}}
-\item \href{#method-title}{\code{Collection$title()}}
-\item \href{#method-description}{\code{Collection$description()}}
-\item \href{#method-date}{\code{Collection$date()}}
-\item \href{#method-references}{\code{Collection$references()}}
-\item \href{#method-component_story_ids}{\code{Collection$component_story_ids()}}
-\item \href{#method-themes}{\code{Collection$themes()}}
-\item \href{#method-source}{\code{Collection$source()}}
-\item \href{#method-size}{\code{Collection$size()}}
-\item \href{#method-obj_internal_tbl}{\code{Collection$obj_internal_tbl()}}
-\item \href{#method-print}{\code{Collection$print()}}
-\item \href{#method-clone}{\code{Collection$clone()}}
+\item \href{#method-Collection-new}{\code{Collection$new()}}
+\item \href{#method-Collection-collection_id}{\code{Collection$collection_id()}}
+\item \href{#method-Collection-title}{\code{Collection$title()}}
+\item \href{#method-Collection-description}{\code{Collection$description()}}
+\item \href{#method-Collection-date}{\code{Collection$date()}}
+\item \href{#method-Collection-references}{\code{Collection$references()}}
+\item \href{#method-Collection-component_story_ids}{\code{Collection$component_story_ids()}}
+\item \href{#method-Collection-themes}{\code{Collection$themes()}}
+\item \href{#method-Collection-source}{\code{Collection$source()}}
+\item \href{#method-Collection-size}{\code{Collection$size()}}
+\item \href{#method-Collection-obj_internal_tbl}{\code{Collection$obj_internal_tbl()}}
+\item \href{#method-Collection-print}{\code{Collection$print()}}
+\item \href{#method-Collection-clone}{\code{Collection$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-Collection-new"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-new}{}}}
 \subsection{Method \code{new()}}{
 Initialize a collection of LTO thematically annotated stories.
 \subsection{Usage}{
@@ -155,8 +155,8 @@ A new \code{Collection} object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-collection_id"></a>}}
-\if{latex}{\out{\hypertarget{method-collection_id}{}}}
+\if{html}{\out{<a id="method-Collection-collection_id"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-collection_id}{}}}
 \subsection{Method \code{collection_id()}}{
 return A length-one character vector corresponding to the collection
 ID.
@@ -166,8 +166,8 @@ ID.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-title"></a>}}
-\if{latex}{\out{\hypertarget{method-title}{}}}
+\if{html}{\out{<a id="method-Collection-title"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-title}{}}}
 \subsection{Method \code{title()}}{
 return A length-one character vector corresponding to the collection
 title.
@@ -177,8 +177,8 @@ title.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-description"></a>}}
-\if{latex}{\out{\hypertarget{method-description}{}}}
+\if{html}{\out{<a id="method-Collection-description"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-description}{}}}
 \subsection{Method \code{description()}}{
 return A length-one character vector of collection defining text.
 \subsection{Usage}{
@@ -187,8 +187,8 @@ return A length-one character vector of collection defining text.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-date"></a>}}
-\if{latex}{\out{\hypertarget{method-date}{}}}
+\if{html}{\out{<a id="method-Collection-date"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-date}{}}}
 \subsection{Method \code{date()}}{
 return A length-one character vector typically of the form "yyyy-yyyy"
 indicating the start and end year for stories in the collection.
@@ -198,8 +198,8 @@ indicating the start and end year for stories in the collection.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-references"></a>}}
-\if{latex}{\out{\hypertarget{method-references}{}}}
+\if{html}{\out{<a id="method-Collection-references"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-references}{}}}
 \subsection{Method \code{references()}}{
 return A tibble of collection reference urls, if any.
 \subsection{Usage}{
@@ -208,8 +208,8 @@ return A tibble of collection reference urls, if any.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-component_story_ids"></a>}}
-\if{latex}{\out{\hypertarget{method-component_story_ids}{}}}
+\if{html}{\out{<a id="method-Collection-component_story_ids"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-component_story_ids}{}}}
 \subsection{Method \code{component_story_ids()}}{
 return A tibble of member story IDs.
 \subsection{Usage}{
@@ -218,8 +218,8 @@ return A tibble of member story IDs.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-themes"></a>}}
-\if{latex}{\out{\hypertarget{method-themes}{}}}
+\if{html}{\out{<a id="method-Collection-themes"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-themes}{}}}
 \subsection{Method \code{themes()}}{
 return A tibble of thematic annotations.
 \subsection{Usage}{
@@ -228,8 +228,8 @@ return A tibble of thematic annotations.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-source"></a>}}
-\if{latex}{\out{\hypertarget{method-source}{}}}
+\if{html}{\out{<a id="method-Collection-source"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-source}{}}}
 \subsection{Method \code{source()}}{
 return The path of the st.txt collection file. This is the file path as
 it occurs on the Theme Ontology GitHub repository at
@@ -240,8 +240,8 @@ it occurs on the Theme Ontology GitHub repository at
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-size"></a>}}
-\if{latex}{\out{\hypertarget{method-size}{}}}
+\if{html}{\out{<a id="method-Collection-size"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-size}{}}}
 \subsection{Method \code{size()}}{
 return A length-one numeric vector containing the number of stories in
 the collection.
@@ -251,8 +251,8 @@ the collection.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-obj_internal_tbl"></a>}}
-\if{latex}{\out{\hypertarget{method-obj_internal_tbl}{}}}
+\if{html}{\out{<a id="method-Collection-obj_internal_tbl"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-obj_internal_tbl}{}}}
 \subsection{Method \code{obj_internal_tbl()}}{
 return A special tibble that is used internally by package functions.
 \subsection{Usage}{
@@ -261,8 +261,8 @@ return A special tibble that is used internally by package functions.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-print"></a>}}
-\if{latex}{\out{\hypertarget{method-print}{}}}
+\if{html}{\out{<a id="method-Collection-print"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-print}{}}}
 \subsection{Method \code{print()}}{
 Print collection object info to console.
 \subsection{Usage}{
@@ -294,8 +294,8 @@ characters, etc.}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Collection-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Collection-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

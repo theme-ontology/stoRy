@@ -1,3 +1,8 @@
+# stoRy 0.2.1
+
+- Fixed code that broke with release of revamped www.themeontology.org website.
+- Updated broken urls.
+
 # stoRy 0.2.0
 
 - Completely redesigned package from the ground up.

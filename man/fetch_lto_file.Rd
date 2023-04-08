@@ -17,7 +17,7 @@ downloaded JSON files (if any) should be re-downloaded and overwritten.}
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
 
 \code{fetch_lto_file()} downloads \acronym{LTO} version JSON files hosted on
-the Theme Ontology website at \url{https://www.themeontology.org/pub/data/}
+the Theme Ontology website at \url{https://www.themeontology.org/data}
 to cache.
 }
 \details{

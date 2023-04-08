@@ -18,7 +18,7 @@ the LTO \code{demo} version by default. Run \code{\link[=which_lto]{which_lto()}
 version is active in your R session.
 
 Search the latest LTO \code{dev} version themes on the Theme Ontology website at
-\url{https://themeontology.org/themes}.
+\url{https://www.themeontology.org/themes}.
 }
 \examples{
 \dontrun{
@@ -62,24 +62,24 @@ Use \code{\link[=Themeset]{Themeset()}} to initialize a set of related LTO theme
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{Theme$new()}}
-\item \href{#method-theme_name}{\code{Theme$theme_name()}}
-\item \href{#method-aliases}{\code{Theme$aliases()}}
-\item \href{#method-description}{\code{Theme$description()}}
-\item \href{#method-notes}{\code{Theme$notes()}}
-\item \href{#method-references}{\code{Theme$references()}}
-\item \href{#method-examples}{\code{Theme$examples()}}
-\item \href{#method-parents}{\code{Theme$parents()}}
-\item \href{#method-ancestors}{\code{Theme$ancestors()}}
-\item \href{#method-source}{\code{Theme$source()}}
-\item \href{#method-annotations}{\code{Theme$annotations()}}
-\item \href{#method-print}{\code{Theme$print()}}
-\item \href{#method-clone}{\code{Theme$clone()}}
+\item \href{#method-Theme-new}{\code{Theme$new()}}
+\item \href{#method-Theme-theme_name}{\code{Theme$theme_name()}}
+\item \href{#method-Theme-aliases}{\code{Theme$aliases()}}
+\item \href{#method-Theme-description}{\code{Theme$description()}}
+\item \href{#method-Theme-notes}{\code{Theme$notes()}}
+\item \href{#method-Theme-references}{\code{Theme$references()}}
+\item \href{#method-Theme-examples}{\code{Theme$examples()}}
+\item \href{#method-Theme-parents}{\code{Theme$parents()}}
+\item \href{#method-Theme-ancestors}{\code{Theme$ancestors()}}
+\item \href{#method-Theme-source}{\code{Theme$source()}}
+\item \href{#method-Theme-annotations}{\code{Theme$annotations()}}
+\item \href{#method-Theme-print}{\code{Theme$print()}}
+\item \href{#method-Theme-clone}{\code{Theme$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-Theme-new"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-new}{}}}
 \subsection{Method \code{new()}}{
 Initialize an LTO theme.
 \subsection{Usage}{
@@ -99,8 +99,8 @@ A new \code{Theme} object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-theme_name"></a>}}
-\if{latex}{\out{\hypertarget{method-theme_name}{}}}
+\if{html}{\out{<a id="method-Theme-theme_name"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-theme_name}{}}}
 \subsection{Method \code{theme_name()}}{
 return A length-one character vector corresponding to the theme name.
 \subsection{Usage}{
@@ -109,8 +109,8 @@ return A length-one character vector corresponding to the theme name.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-aliases"></a>}}
-\if{latex}{\out{\hypertarget{method-aliases}{}}}
+\if{html}{\out{<a id="method-Theme-aliases"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-aliases}{}}}
 \subsection{Method \code{aliases()}}{
 return A tibble of theme name aliases.
 \subsection{Usage}{
@@ -119,8 +119,8 @@ return A tibble of theme name aliases.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-description"></a>}}
-\if{latex}{\out{\hypertarget{method-description}{}}}
+\if{html}{\out{<a id="method-Theme-description"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-description}{}}}
 \subsection{Method \code{description()}}{
 return A length-one character vector corresponding to the theme
 description.
@@ -130,8 +130,8 @@ description.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-notes"></a>}}
-\if{latex}{\out{\hypertarget{method-notes}{}}}
+\if{html}{\out{<a id="method-Theme-notes"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-notes}{}}}
 \subsection{Method \code{notes()}}{
 return A tibble of caveats that accompany that theme description. This
 is empty for the vast majority of themes.
@@ -141,8 +141,8 @@ is empty for the vast majority of themes.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-references"></a>}}
-\if{latex}{\out{\hypertarget{method-references}{}}}
+\if{html}{\out{<a id="method-Theme-references"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-references}{}}}
 \subsection{Method \code{references()}}{
 return A tibble of references.
 \subsection{Usage}{
@@ -151,8 +151,8 @@ return A tibble of references.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-examples"></a>}}
-\if{latex}{\out{\hypertarget{method-examples}{}}}
+\if{html}{\out{<a id="method-Theme-examples"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-examples}{}}}
 \subsection{Method \code{examples()}}{
 return A tibble of example usages of the theme, if any.
 \subsection{Usage}{
@@ -161,8 +161,8 @@ return A tibble of example usages of the theme, if any.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-parents"></a>}}
-\if{latex}{\out{\hypertarget{method-parents}{}}}
+\if{html}{\out{<a id="method-Theme-parents"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-parents}{}}}
 \subsection{Method \code{parents()}}{
 return A tibble of the theme's parent theme names.
 \subsection{Usage}{
@@ -171,8 +171,8 @@ return A tibble of the theme's parent theme names.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ancestors"></a>}}
-\if{latex}{\out{\hypertarget{method-ancestors}{}}}
+\if{html}{\out{<a id="method-Theme-ancestors"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-ancestors}{}}}
 \subsection{Method \code{ancestors()}}{
 return A tibble of the theme's ancestor theme names.
 \subsection{Usage}{
@@ -181,8 +181,8 @@ return A tibble of the theme's ancestor theme names.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-source"></a>}}
-\if{latex}{\out{\hypertarget{method-source}{}}}
+\if{html}{\out{<a id="method-Theme-source"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-source}{}}}
 \subsection{Method \code{source()}}{
 return The path of the th.txt file containing the theme. This is the
 file path as it occurs on the Theme Ontology GitHub repository at
@@ -193,8 +193,8 @@ file path as it occurs on the Theme Ontology GitHub repository at
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-annotations"></a>}}
-\if{latex}{\out{\hypertarget{method-annotations}{}}}
+\if{html}{\out{<a id="method-Theme-annotations"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-annotations}{}}}
 \subsection{Method \code{annotations()}}{
 return A tibble with one row for each story in which the theme is
 featured. The first column is the LTO story ID, the second is the
@@ -207,8 +207,8 @@ the theme. Each column is of type character.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-print"></a>}}
-\if{latex}{\out{\hypertarget{method-print}{}}}
+\if{html}{\out{<a id="method-Theme-print"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-print}{}}}
 \subsection{Method \code{print()}}{
 Print theme object info to console.
 \subsection{Usage}{
@@ -231,8 +231,8 @@ characters, etc.}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Theme-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Theme-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

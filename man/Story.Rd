@@ -19,7 +19,7 @@ the LTO \code{demo} version by default. Run \code{\link[=which_lto]{which_lto()}
 version is active in your R session.
 
 Search the latest LTO \code{dev} version stories on the Theme Ontology website
-at \url{https://themeontology.org/stories}.
+at \url{https://www.themeontology.org/stories}.
 }
 \examples{
 \dontrun{
@@ -54,23 +54,23 @@ Use \code{\link[=Themeset]{Themeset()}} to initialize a set of related LTO theme
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{Story$new()}}
-\item \href{#method-story_id}{\code{Story$story_id()}}
-\item \href{#method-title}{\code{Story$title()}}
-\item \href{#method-description}{\code{Story$description()}}
-\item \href{#method-date}{\code{Story$date()}}
-\item \href{#method-references}{\code{Story$references()}}
-\item \href{#method-collections}{\code{Story$collections()}}
-\item \href{#method-themes}{\code{Story$themes()}}
-\item \href{#method-source}{\code{Story$source()}}
-\item \href{#method-obj_internal_tbl}{\code{Story$obj_internal_tbl()}}
-\item \href{#method-print}{\code{Story$print()}}
-\item \href{#method-clone}{\code{Story$clone()}}
+\item \href{#method-Story-new}{\code{Story$new()}}
+\item \href{#method-Story-story_id}{\code{Story$story_id()}}
+\item \href{#method-Story-title}{\code{Story$title()}}
+\item \href{#method-Story-description}{\code{Story$description()}}
+\item \href{#method-Story-date}{\code{Story$date()}}
+\item \href{#method-Story-references}{\code{Story$references()}}
+\item \href{#method-Story-collections}{\code{Story$collections()}}
+\item \href{#method-Story-themes}{\code{Story$themes()}}
+\item \href{#method-Story-source}{\code{Story$source()}}
+\item \href{#method-Story-obj_internal_tbl}{\code{Story$obj_internal_tbl()}}
+\item \href{#method-Story-print}{\code{Story$print()}}
+\item \href{#method-Story-clone}{\code{Story$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-Story-new"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-new}{}}}
 \subsection{Method \code{new()}}{
 Initialize an LTO thematically annotated story.
 \subsection{Usage}{
@@ -90,8 +90,8 @@ A new \code{Story} object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-story_id"></a>}}
-\if{latex}{\out{\hypertarget{method-story_id}{}}}
+\if{html}{\out{<a id="method-Story-story_id"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-story_id}{}}}
 \subsection{Method \code{story_id()}}{
 return A length-one character vector corresponding to the story ID.
 \subsection{Usage}{
@@ -100,8 +100,8 @@ return A length-one character vector corresponding to the story ID.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-title"></a>}}
-\if{latex}{\out{\hypertarget{method-title}{}}}
+\if{html}{\out{<a id="method-Story-title"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-title}{}}}
 \subsection{Method \code{title()}}{
 return A length-one character vector corresponding to the story title.
 \subsection{Usage}{
@@ -110,8 +110,8 @@ return A length-one character vector corresponding to the story title.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-description"></a>}}
-\if{latex}{\out{\hypertarget{method-description}{}}}
+\if{html}{\out{<a id="method-Story-description"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-description}{}}}
 \subsection{Method \code{description()}}{
 return A length-one character vector corresponding to some summary
 information about the story. This is typically a synopsis and/or
@@ -122,8 +122,8 @@ details about the authorship, production, distribution, etc.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-date"></a>}}
-\if{latex}{\out{\hypertarget{method-date}{}}}
+\if{html}{\out{<a id="method-Story-date"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-date}{}}}
 \subsection{Method \code{date()}}{
 return A length-one character vector corresponding to the story release
 date.
@@ -133,8 +133,8 @@ date.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-references"></a>}}
-\if{latex}{\out{\hypertarget{method-references}{}}}
+\if{html}{\out{<a id="method-Story-references"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-references}{}}}
 \subsection{Method \code{references()}}{
 return A tibble of story reference urls, if any.
 \subsection{Usage}{
@@ -143,8 +143,8 @@ return A tibble of story reference urls, if any.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-collections"></a>}}
-\if{latex}{\out{\hypertarget{method-collections}{}}}
+\if{html}{\out{<a id="method-Story-collections"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-collections}{}}}
 \subsection{Method \code{collections()}}{
 return A tibble of LTO collections to which the story belongs, if any.
 \subsection{Usage}{
@@ -153,8 +153,8 @@ return A tibble of LTO collections to which the story belongs, if any.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-themes"></a>}}
-\if{latex}{\out{\hypertarget{method-themes}{}}}
+\if{html}{\out{<a id="method-Story-themes"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-themes}{}}}
 \subsection{Method \code{themes()}}{
 return A tibble of thematic annotations.
 \subsection{Usage}{
@@ -163,8 +163,8 @@ return A tibble of thematic annotations.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-source"></a>}}
-\if{latex}{\out{\hypertarget{method-source}{}}}
+\if{html}{\out{<a id="method-Story-source"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-source}{}}}
 \subsection{Method \code{source()}}{
 return The path of the st.txt file containing the story thematic
 annotations. This is the file path as it occurs on the Theme Ontology
@@ -175,8 +175,8 @@ GitHub repository at \url{https://github.com/theme-ontology/theming}.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-obj_internal_tbl"></a>}}
-\if{latex}{\out{\hypertarget{method-obj_internal_tbl}{}}}
+\if{html}{\out{<a id="method-Story-obj_internal_tbl"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-obj_internal_tbl}{}}}
 \subsection{Method \code{obj_internal_tbl()}}{
 return A special tibble that is used internally by package functions.
 \subsection{Usage}{
@@ -185,8 +185,8 @@ return A special tibble that is used internally by package functions.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-print"></a>}}
-\if{latex}{\out{\hypertarget{method-print}{}}}
+\if{html}{\out{<a id="method-Story-print"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-print}{}}}
 \subsection{Method \code{print()}}{
 Print story object info to console.
 \subsection{Usage}{
@@ -209,8 +209,8 @@ characters, etc.}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Story-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Story-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

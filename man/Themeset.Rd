@@ -63,19 +63,19 @@ Use \code{\link[=Theme]{Theme()}} to initialize an LTO theme.
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{Themeset$new()}}
-\item \href{#method-themeset_id}{\code{Themeset$themeset_id()}}
-\item \href{#method-description}{\code{Themeset$description()}}
-\item \href{#method-component_theme_names}{\code{Themeset$component_theme_names()}}
-\item \href{#method-size}{\code{Themeset$size()}}
-\item \href{#method-obj_internal_tbl}{\code{Themeset$obj_internal_tbl()}}
-\item \href{#method-print}{\code{Themeset$print()}}
-\item \href{#method-clone}{\code{Themeset$clone()}}
+\item \href{#method-Themeset-new}{\code{Themeset$new()}}
+\item \href{#method-Themeset-themeset_id}{\code{Themeset$themeset_id()}}
+\item \href{#method-Themeset-description}{\code{Themeset$description()}}
+\item \href{#method-Themeset-component_theme_names}{\code{Themeset$component_theme_names()}}
+\item \href{#method-Themeset-size}{\code{Themeset$size()}}
+\item \href{#method-Themeset-obj_internal_tbl}{\code{Themeset$obj_internal_tbl()}}
+\item \href{#method-Themeset-print}{\code{Themeset$print()}}
+\item \href{#method-Themeset-clone}{\code{Themeset$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-Themeset-new"></a>}}
+\if{latex}{\out{\hypertarget{method-Themeset-new}{}}}
 \subsection{Method \code{new()}}{
 Initialize a collection of LTO themes.
 \subsection{Usage}{
@@ -103,8 +103,8 @@ A new \code{Themeset} object.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-themeset_id"></a>}}
-\if{latex}{\out{\hypertarget{method-themeset_id}{}}}
+\if{html}{\out{<a id="method-Themeset-themeset_id"></a>}}
+\if{latex}{\out{\hypertarget{method-Themeset-themeset_id}{}}}
 \subsection{Method \code{themeset_id()}}{
 return A length-one character vector corresponding to the themeset ID.
 \subsection{Usage}{
@@ -113,8 +113,8 @@ return A length-one character vector corresponding to the themeset ID.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-description"></a>}}
-\if{latex}{\out{\hypertarget{method-description}{}}}
+\if{html}{\out{<a id="method-Themeset-description"></a>}}
+\if{latex}{\out{\hypertarget{method-Themeset-description}{}}}
 \subsection{Method \code{description()}}{
 return A length-one character vector corresponding to the themeset
 description.
@@ -124,8 +124,8 @@ description.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-component_theme_names"></a>}}
-\if{latex}{\out{\hypertarget{method-component_theme_names}{}}}
+\if{html}{\out{<a id="method-Themeset-component_theme_names"></a>}}
+\if{latex}{\out{\hypertarget{method-Themeset-component_theme_names}{}}}
 \subsection{Method \code{component_theme_names()}}{
 return A tibble of member themes.
 \subsection{Usage}{
@@ -134,8 +134,8 @@ return A tibble of member themes.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-size"></a>}}
-\if{latex}{\out{\hypertarget{method-size}{}}}
+\if{html}{\out{<a id="method-Themeset-size"></a>}}
+\if{latex}{\out{\hypertarget{method-Themeset-size}{}}}
 \subsection{Method \code{size()}}{
 return A length-one numeric vector containing the number of themes in
 the themeset.
@@ -145,8 +145,8 @@ the themeset.
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-obj_internal_tbl"></a>}}
-\if{latex}{\out{\hypertarget{method-obj_internal_tbl}{}}}
+\if{html}{\out{<a id="method-Themeset-obj_internal_tbl"></a>}}
+\if{latex}{\out{\hypertarget{method-Themeset-obj_internal_tbl}{}}}
 \subsection{Method \code{obj_internal_tbl()}}{
 a pre-computed table used internally by package functions
 \subsection{Usage}{
@@ -155,8 +155,8 @@ a pre-computed table used internally by package functions
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-print"></a>}}
-\if{latex}{\out{\hypertarget{method-print}{}}}
+\if{html}{\out{<a id="method-Themeset-print"></a>}}
+\if{latex}{\out{\hypertarget{method-Themeset-print}{}}}
 \subsection{Method \code{print()}}{
 Print collection object info to console.
 \subsection{Usage}{
@@ -188,8 +188,8 @@ characters, etc.}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-Themeset-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Themeset-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

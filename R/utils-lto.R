@@ -11,7 +11,7 @@ lto_json_file_names <- function(version) {
 
 defunct_versions <- function() c("v0.1.1", "v0.1.0")
 
-base_url <- function() "https://www.themeontology.org/pub/data"
+base_url <- function() "https://totolo-lto.s3.eu-west-1.amazonaws.com"
 
 lto_repo_url <- function() "https://api.github.com/repos/theme-ontology/theming/tags"
 
@@ -62,22 +62,22 @@ are_newest_lto_json_files_cached <- function(version) {
 }
 
 get_website_lto_file_timestamps_tbl <- function(version) {
-  inlines <- readLines(base_url())
-  mypattern <- ">([^<]+[^\\s$])(\\s*)<"
-  inlines <- unlist(lapply(stringr::str_match_all(string = inlines, pattern = mypattern), function(x){x[, 2]}))
-  inlines <- inlines[!grepl(inlines,pattern = "nbsp")]
-  lto_file_timestamps <- inlines[which(inlines %in% lto_json_file_names(version)) + 1]
+  website_lto_file_timestamps <- NULL
+  for (file_name in lto_json_file_names(version)) {
+    website_lto_file_timestamp <- get_website_lto_file_timestamp(file_name)
+    website_lto_file_timestamps <- c(website_lto_file_timestamps, website_lto_file_timestamp)
+  }
   website_lto_file_timestamps_tbl <- tibble(file = lto_json_file_names(version),
-                                            timestamp = lto_file_timestamps)
+                                            timestamp = website_lto_file_timestamps)
   website_lto_file_timestamps_tbl
 }
 
 get_website_lto_file_timestamp <- function(file_name) {
-  inlines <- readLines(base_url())
-  mypattern <- ">([^<]+[^\\s$])(\\s*)<"
-  inlines <- unlist(lapply(stringr::str_match_all(string = inlines, pattern = mypattern), function(x){x[, 2]}))
-  inlines <- inlines[!grepl(inlines,pattern = "nbsp")]
-  lto_file_timestamps <- inlines[which(inlines == file_name) + 1]
+  file_url <- file.path(base_url(), file_name)
+  inlines <- readLines(file_url, n = 4) # timestamp expected in fourth line of file
+  timestamp_line <- inlines[grepl(inlines, pattern = "timestamp")]
+  website_lto_file_timestamp <- strsplit(timestamp_line, split = "\"")[[1]][4]
+  website_lto_file_timestamp
 }
 
 get_cached_lto_file_timestamps_tbl <- function(version) {

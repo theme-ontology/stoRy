@@ -15,7 +15,7 @@
 #' version is active in your R session.
 #'
 #' Search the latest LTO `dev` version stories on the Theme Ontology website
-#' at \url{https://themeontology.org/stories}.
+#' at \url{https://www.themeontology.org/stories}.
 #'
 #' @param ... Additional arguments
 #'

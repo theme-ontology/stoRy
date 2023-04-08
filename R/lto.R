@@ -25,7 +25,7 @@
 #'
 #' `configure_lto()` downloads and configures \acronym{LTO} version releases
 #'   hosted on the Theme Ontology website at
-#'   \url{https://www.themeontology.org/pub/data/}.
+#'   \url{https://www.themeontology.org/data}.
 #'
 #' `set_lto()` sets an \acronym{LTO} version as the active version. This means
 #'   that package functions will act on this version. The active version is
@@ -342,7 +342,7 @@ set_lto <- function(
 #' `r lifecycle::badge('maturing')`
 #'
 #' `fetch_lto_file()` downloads \acronym{LTO} version JSON files hosted on
-#'   the Theme Ontology website at <https://www.themeontology.org/pub/data/>
+#'   the Theme Ontology website at <https://www.themeontology.org/data>
 #'   to cache.
 #'
 #' @details This function is called internally by the `configure_lto()`

@@ -69,7 +69,7 @@ download/cached/defunct) for each \acronym{LTO} version.
 
 \code{configure_lto()} downloads and configures \acronym{LTO} version releases
 hosted on the Theme Ontology website at
-\url{https://www.themeontology.org/pub/data/}.
+\url{https://www.themeontology.org/data}.
 
 \code{set_lto()} sets an \acronym{LTO} version as the active version. This means
 that package functions will act on this version. The active version is

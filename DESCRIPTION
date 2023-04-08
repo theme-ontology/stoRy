@@ -1,7 +1,7 @@
 Package: stoRy
 Title: Download, Explore, and Analyze Literary Theme Ontology Data
-Version: 0.2.0
-Date: 2021-11-02
+Version: 0.2.1
+Date: 2023-04-08
 Authors@R:
     c(person(given = "Paul",
              family = "Sheridan",
@@ -17,10 +17,10 @@ Authors@R:
 Description: Download, explore, and analyze Literary Theme Ontology themes
     and thematically annotated story data. To learn more about the project
     visit <https://github.com/theme-ontology/theming> and
-    <https://themeontology.org>.
+    <https://www.themeontology.org>.
 License: GPL-3
 URL: https://github.com/theme-ontology/stoRy,
-    https://github.com/theme-ontology/theming, https://themeontology.org/
+    https://github.com/theme-ontology/theming, https://www.themeontology.org/
 BugReports: https://github.com/theme-ontology/stoRy/issues
 Depends:
     R (>= 3.5.0)
@@ -55,4 +55,4 @@ VignetteBuilder:
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3

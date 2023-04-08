@@ -15,7 +15,7 @@
 #' version is active in your R session.
 #'
 #' Search the latest LTO `dev` version collections on the Theme Ontology
-#' website at \url{https://themeontology.org/stories}.
+#' website at \url{https://www.themeontology.org/stories}.
 #'
 #' Alternatively, it is possible to read in a user-defined collection from
 #' file. In this case, the collection ID as defined in the file must match the
