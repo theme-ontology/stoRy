@@ -179,7 +179,7 @@ a community as a result of rumors and fear is explored in numerous works of
 fiction, including several *Twilight Zone* episodes.
 
 The LTO captures hysteria of this kind with the theme
-[mass hysteria](https://themeontology.org/theme.php?name=mass%20hysteria). To
+[mass hysteria](https://www.themeontology.org/theme/mass%20hysteria). To
 explore "mass hysteria" theme ("demo" version) initialize the `Theme` class
 object
 ```{r}
@@ -203,11 +203,11 @@ theme$annotations()
 See `?Theme` for more on `Theme` class objects.
 
 **A Note on Finding Themes**: LTO developmental themes are easily explored
-using the [theme search box](https://themeontology.org/themes) on the project
-website. Chances are that any theme found in the developmental version will
-also exist in the demo version. So searching for themes on the website offers
-a practical approach to finding interesting themes to initialize in an R
-session.
+using the [theme search box](https://www.themeontology.org/themes) on the
+project website. Chances are that any theme found in the developmental version
+will also exist in the demo version. So searching for themes on the website
+offers a practical approach to finding interesting themes to initialize in an
+R session.
 
 **Pro Tip**: Demo version themes are explorable in tibble format. For example,
 here is one way to search for "mass hysteria" directly in the demo themes:
@@ -252,7 +252,7 @@ themes
 See `?Theme` for more on `Theme` class objects.
 
 **A Note on Finding Story IDs**: The project website
-[story search box](https://themeontology.org/stories) offers a
+[story search box](https://www.themeontology.org/stories) offers a
 quick-and-dirty way of locating LTO developmental version story IDs of
 interest. Since story IDs are stable, developmental version *The Twilight
 Zone* story IDs can be expected to agree with their demo data counterparts.
@@ -296,9 +296,9 @@ collection$print(canonical = TRUE)
 
 **A Note on Finding Collection IDs**: As with stories, LTO developmental
 version collections can be explored from the project website
-[story search box](https://themeontology.org/stories). Developmental and demo
-version collection IDs should generally match up. This is in particular the
-case with *Twilight Zone* collection IDs.
+[story search box](https://www.themeontology.org/stories). Developmental and
+demo version collection IDs should generally match up. This is in particular
+the case with *Twilight Zone* collection IDs.
 
 **Pro Tip**: Demo version collections can be directly explored in the usual
 way

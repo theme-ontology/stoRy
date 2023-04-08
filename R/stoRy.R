@@ -32,7 +32,7 @@
 #'     <https://github.com/theme-ontology/stoRy>
 #'   * \acronym{LTO} project website: <https://www.themeontology.org>
 #'   * \acronym{LTO} project GitHub repositories: <https://github.com/theme-ontology>
-#'   * [LTO conference paper](http://ceur-ws.org/Vol-2518/paper-WODHSA8.pdf)
+#'   * [LTO conference paper](https://ceur-ws.org/Vol-2518/paper-WODHSA8.pdf)
 #'     in *Proceedings of the Joint Ontology Workshops 2019 Episode V: The
 #'     Styrian Autumn of Ontology*
 "_PACKAGE"

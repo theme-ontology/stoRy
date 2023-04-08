@@ -25,7 +25,7 @@ General resources:
 \url{https://github.com/theme-ontology/stoRy}
 \item \acronym{LTO} project website: \url{https://www.themeontology.org}
 \item \acronym{LTO} project GitHub repositories: \url{https://github.com/theme-ontology}
-\item \href{http://ceur-ws.org/Vol-2518/paper-WODHSA8.pdf}{LTO conference paper}
+\item \href{https://ceur-ws.org/Vol-2518/paper-WODHSA8.pdf}{LTO conference paper}
 in \emph{Proceedings of the Joint Ontology Workshops 2019 Episode V: The
 Styrian Autumn of Ontology}
 }
