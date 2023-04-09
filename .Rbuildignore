@@ -11,3 +11,4 @@ data-raw
 ^codecov\.yml$
 ^CRAN-RELEASE$
 ^LICENSE$
+^CRAN-SUBMISSION$
