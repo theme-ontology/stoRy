@@ -3,10 +3,10 @@ citHeader("To cite the 'stoRy' package in publications use:")
 year <- sub("-.*", "", meta$Date)
 version <- paste("R package version", meta$Version)
 
-citEntry(
-  entry = "Manual",
+bibentry(
+  bibtype = "Manual",
   title = "{stoRy}: Download, Explore, and Analyze Literary Theme Ontology Data",
-  author = personList(
+  author = c(
     as.person("Paul Sheridan"),
     as.person("Oshan Modi"),
     as.person("Mikael Onsjö")
