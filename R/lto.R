@@ -182,8 +182,7 @@ lto_version_statuses <- function(verbose = TRUE) {
   }
   cli_end()
 
-  # @PAUL: Add version JSON files to GitHub releases.  
-  if (verbose) cli_text("Access LTO version JSON files directly at {.url https://github.com/theme-ontology/theming/releases}")
+  if (verbose) cli_text("Access LTO versioned and dev release JSON files directly at {.url ttps://www.themeontology.org/data}")
 }
 
 
