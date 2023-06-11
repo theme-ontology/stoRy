@@ -1,5 +1,8 @@
 # stoRy 0.2.2
 
+- Fixed bug that prevented the loading of LTO versioned release data into R.
+- Regenerated Twilight Zone demo dataset using the LTO v2023.06 release.
+- Improved theme data integrity checks.
 - Updated documentation.
 
 # stoRy 0.2.1
