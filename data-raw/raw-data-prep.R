@@ -1,10 +1,13 @@
 # Preliminaries
 rm(list = ls())
+packages <- c("tidyjson", "dplyr", "tibble", "rappdirs", "stringr", "crayon",
+              "tidyr", "jsonlite")
+install.packages(setdiff(packages, rownames(installed.packages())))
 library(tidyjson)
 library(dplyr)
 library(tibble)
 library(rappdirs)
-lto_version <- "v0.3.3"
+lto_version <- "v2023.06"
 root <- "/Users/Paul/Desktop/theme-ontology/stoRy/" # Local path to "stoRy-package" folder
 cache_path <- file.path(user_cache_dir("stoRy"), lto_version)
 working_dir <- paste0(root, "data-raw/")
