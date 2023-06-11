@@ -305,7 +305,7 @@ set_lto <- function(
   # If an Rds file is missing, stop here
   if (isTRUE(!are_lto_files_cached(lto_rds_file_names(), version) && load_background_collection)) {
     msg <- get_lto_rds_file_not_found_msg(version)
-    abort(msg, class = "lto_json_file_not_found")
+    abort(msg, class = "lto_rds_file_not_found")
   }
 
   # If `version` is "latest", convert it to the numbered version
@@ -564,7 +564,27 @@ generate_themes_tbl <- function(
 
   if (verbose) cli_text("Found {.val {nrow(themes_tbl)}} theme{?/s}")
 
+  # Drop duplicate themes, if any
+  duplicate_themes <- themes_tbl %>% filter(duplicated(.data$theme_name))
+  duplicate_theme_index <- duplicate_themes %>% pull(.data$theme_index)
+  duplicate_theme_names <- duplicate_themes %>% pull(.data$theme_name)
+  has_duplicate_theme <- ifelse(identical(duplicate_theme_names, character(0)), FALSE, TRUE)
+  
+  for (i in seq_along(duplicate_theme_names)) {
+    themes_tbl <- themes_tbl %>% filter(.data$theme_index != duplicate_theme_index[i])
+    
+    if (verbose) {
+      cli_text("Dropped duplicate theme entry {.val {duplicate_theme_names[i]}}")
+    }
+  }
+  
+  # Redefine theme indices accordingly
+  if (has_duplicate_theme) {
+    themes_tbl$theme_index <- 1 : nrow(themes_tbl)
+  }
+  
   # Ancestor theme generation requires some care
+  # TODO: Call error here if cycle detected
   ancestors_lst <- vector(mode = "list", length = nrow(themes_tbl))
   for (i in seq(nrow(themes_tbl))) {
     ancestors <- character(0)
@@ -579,6 +599,7 @@ generate_themes_tbl <- function(
       ancestors <- c(ancestors, parents)
       theme_queue <- c(theme_queue, parents)
     }
+    ancestors <- unique(ancestors)
     ancestors_lst[[i]] <- as_tibble_col(ancestors, column_name = "ancestors")
   }
   themes_tbl <- themes_tbl %>%

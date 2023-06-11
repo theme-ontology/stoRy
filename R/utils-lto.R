@@ -20,7 +20,8 @@ lto_file_extensions <- function() c("\\.st\\.txt", "\\.thset\\.txt")
 lto_rds_file_names <- function() {
   c(paste0(categories(), "_tbl.Rds"),
     "metadata_tbl.Rds",
-    "stub_story_ids_tbl.Rds",
+    "stub_stories_tbl.Rds",
+    "stub_collections_tbl.Rds",
     "background_collection.Rds",
     "lto_file_timestamps.Rds")
 }
