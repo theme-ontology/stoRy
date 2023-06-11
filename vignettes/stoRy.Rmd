@@ -2,8 +2,8 @@
 title: "An Introduction to stoRy"
 author:
   - Paul Sheridan
-  - Oshan Modi
   - Mikael Onsjö
+  - Oshan Modi
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 bibliography: assets/stoRy_refs.bib
 output: rmarkdown::html_vignette
@@ -102,17 +102,16 @@ prints to console everything needed to cite the package in a publication.
 
 This section is a good starting point for first time users. Included in the
 package is a toy dataset, extracted from the latest LTO version, comprising
-some 2,872 LTO themes and 335 thematically annotated *The Twilight Zone*
+some 2,945 LTO themes and 335 thematically annotated *The Twilight Zone*
 American media franchise stories [@Wikipedia2021].
 
-The themes are hierarchically arranged into four domains descended from an
+The themes are hierarchically arranged into three domains descended from an
 abstract root theme:
 ```
 literary thematic entity
-├── the human condition
-├── society
-├── the pursuit of knowledge
-└── speculative fiction theme
+├── the human world
+├── the natural world
+└── alternate reality
 ```
 
 Contained in the demo data are the following *Twilight Zone* thematically
@@ -354,7 +353,7 @@ result_tbl <- get_similar_stories(query_story)
 result_tbl
 ``` 
 
-The theory and methods implemented in the `get_enriched_themes` function
+The theory and methods implemented in the `get_similar_stories` function
 are described in [@Sheridan2019a].
 
 
