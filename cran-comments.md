@@ -1,4 +1,4 @@
-This is a patch release fixing some code and urls that broke as a result of changes to the Theme Ontology website.
+This is a patch release with bug fixes and an updated demo dataset.
 
 # R CMD check results
 
@@ -17,11 +17,4 @@ This is a patch release fixing some code and urls that broke as a result of chan
 There are currently no downstream dependencies for this package.
 
 ## Remarks
-This is a resubmission. The following errors have now been fixed:
- 
-```
-  Package CITATION file contains call(s) to old-style personList() or
-  as.personList().  Please use c() on person objects instead.
-  Package CITATION file contains call(s) to old-style citEntry().  Please
-  use bibentry() instead.
-```
+This is a new release.
