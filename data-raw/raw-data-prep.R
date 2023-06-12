@@ -8,7 +8,7 @@ library(dplyr)
 library(tibble)
 library(rappdirs)
 lto_version <- "v2023.06"
-root <- "/Users/Paul/Desktop/theme-ontology/stoRy/" # Local path to "stoRy-package" folder
+root <- "/path/to/stoRy/" # Add local path to stoRy package folder here
 cache_path <- file.path(user_cache_dir("stoRy"), lto_version)
 working_dir <- paste0(root, "data-raw/")
 output_dir <- paste0(root, "R/")
