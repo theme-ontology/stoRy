@@ -44,8 +44,6 @@ the Theme Ontology [website](https://www.themeontology.org/). The `stoRy`
 package is used to perform various statistical analyses on the data. These
 tells us interesting things about the kind of stories we humans invent.
 
-This is insserted for testing purposes.
-
 ## Installation
 
 The package is hosted on CRAN and can be installed by running the command
