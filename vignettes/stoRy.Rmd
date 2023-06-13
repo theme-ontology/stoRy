@@ -48,7 +48,7 @@ tells us interesting things about the kind of stories we humans invent.
 
 The package is hosted on CRAN and can be installed by running the command
 
-```{r setup}
+```{r, eval = FALSE}
 install.packages("stoRy")
 ```
 
@@ -56,7 +56,7 @@ The developmental version is hosted on GitHub and can be installed using the
 devtools package:
 
 
-```{r}
+```{r, eval = FALSE}
 # install.packages("devtools")
 # devtools::install_github("theme-ontology/stoRy")
 ```
@@ -64,7 +64,7 @@ devtools package:
 Once installed, the package can be loaded by running the standard library
 command
 
-```{r}
+```{r, eval = FALSE}
 library(stoRy)
 ```
 
@@ -73,7 +73,7 @@ library(stoRy)
 
 Each function in the package is documented. The command
 
-```{r}
+```{r, eval = FALSE}
 help(package = "stoRy")
 ```
 
@@ -84,13 +84,13 @@ Help with using functions is obtained in the usual R manner. For instance,
 the documentation for the `get_similar_stories` function can be accessed
 with the command
 
-```{r}
+```{r, eval = FALSE}
 ?get_similar_stories
 ```
 
 The command
 
-```{r}
+```{r, eval = FALSE}
 citation("stoRy")
 ```
 
@@ -134,25 +134,25 @@ local machine.
 
 
 To begin check that the `demo` LTO version is active
-```{r}
+```{r, eval = FALSE}
 which_lto()
 ```
 
 Should it be that another LTO version is actively loaded, switch to the `demo`
 version 
-```{r}
+```{r, eval = FALSE}
 set_lto(version = "demo")
 ```
 
 Print LTO `demo` version summary information to console 
-```{r}
+```{r, eval = FALSE}
 print_lto()
 ```
 
 A detailed description of the demo data included in the package can be viewed
 by running the command
 
-```{r}
+```{r, eval = FALSE}
 ?`lto-demo`
 ```
 
@@ -160,7 +160,7 @@ by running the command
 stored in such a way that prohibits users from modifying it. The following
 sequence of commands, however, clones the data:
 
-```{r}
+```{r, eval = FALSE}
 demo_metadata_tbl <- clone_active_metadata_tbl()
 demo_themes_tbl <- clone_active_themes_tbl()
 demo_stories_tbl <- clone_active_stories_tbl()
@@ -180,12 +180,12 @@ The LTO captures hysteria of this kind with the theme
 [mass hysteria](https://www.themeontology.org/theme/mass%20hysteria). To
 explore "mass hysteria" theme ("demo" version) initialize the `Theme` class
 object
-```{r}
+```{r, eval = FALSE}
 theme <- Theme$new(theme_name = "mass hysteria")
 ```
 
 The theme entry can be printed to console in two ways
-```{r}
+```{r, eval = FALSE}
 # Print stylized text:
 theme
 
@@ -194,7 +194,7 @@ theme$print(canonical = TRUE)
 ```
 
 Story thematic annotations are stored as a tibble
-```{r}
+```{r, eval = FALSE}
 theme$annotations()
 ```
 
@@ -209,7 +209,7 @@ R session.
 
 **Pro Tip**: Demo version themes are explorable in tibble format. For example,
 here is one way to search for "mass hysteria" directly in the demo themes:
-```{r}
+```{r, eval = FALSE}
 # install.packages("dplyr")
 suppressMessages(library(dplyr))
 # install.packages("stringr")
@@ -224,7 +224,7 @@ Notice that all themes containing the substring `"mass"` are returned. The
 ### Example: Initialize a Story
 
 Thematically annotated stories are initialized by story ID. For example, run
-```{r}
+```{r, eval = FALSE}
 story <- Story$new(story_id = "tz1959e1x22")
 ```
 to initialize a `Story` class object representing the "mass hysteria"
@@ -233,7 +233,7 @@ Monsters Are Due on Maple Street*.
 
 Story thematic annotations along with episode identifying metadata can be
 printed to console
-```{r}
+```{r, eval = FALSE}
 # In stylized text format:
 story
 
@@ -242,7 +242,7 @@ story$print(canonical = TRUE)
 ```
 
 A tibble of thematic annotations is obtained by running
-```{r}
+```{r, eval = FALSE}
 themes <- story$themes()
 themes
 ```
@@ -257,7 +257,7 @@ Zone* story IDs can be expected to agree with their demo data counterparts.
 
 **Pro Tip**: A demo data story ID is directly obtained from an episode title
 as follows:
-```{r}
+```{r, eval = FALSE}
 title <- "The Monsters Are Due on Maple Street"
 demo_stories_tbl <- clone_active_stories_tbl()
 story_id <- demo_stories_tbl %>% filter(title == !!title) %>% pull(story_id)
@@ -271,20 +271,20 @@ The `dplyr` package is again required to run the `%>%` mediated pipeline.
 Each story belongs to at least one collection (i.e. a set of related stories).
 *The Monsters Are Due on Maple Street*, for instance, belongs to the two
 collections
-```{r}
+```{r, eval = FALSE}
 story$collections()
 ```
 
 To initialize a `Collection` class object for *The Twilight Zone* (1959)
 television series, of which *The Monsters Are Due on Maple Street* is an
 episode, run:
-```{r}
+```{r, eval = FALSE}
 collection <- Collection$new(collection_id = "Collection: tvseries: The Twilight Zone (1959)")
 ```
 
 Collection info is printed to console in the same way as with themes and
 stories
-```{r}
+```{r, eval = FALSE}
 # Print stylized text:
 collection
 
@@ -300,7 +300,7 @@ the case with *Twilight Zone* collection IDs.
 
 **Pro Tip**: Demo version collections can be directly explored in the usual
 way
-```{r}
+```{r, eval = FALSE}
 demo_collections_tbl <- clone_active_collections_tbl()
 demo_collections_tbl
 ```
@@ -310,14 +310,14 @@ demo_collections_tbl
 
 To view the top 10 most featured themes in the *The Twilight Zone* (1959)
 series run:
-```{r}
+```{r, eval = FALSE}
 collection <- Collection$new(collection_id = "Collection: tvseries: The Twilight Zone (1959)")
 result_tbl <- get_featured_themes(collection)
 result_tbl
 ```
 
 To view the top 10 most featured themes in the demo data as a whole run
-```{r}
+```{r, eval = FALSE}
 result_tbl <- get_featured_themes()
 result_tbl
 ```
@@ -326,14 +326,14 @@ result_tbl
 
 To view the top 10 most enriched, or over-represented themes in *The Twilight
 Zone* (1959) series with all *The Twilight Zone* stories as background run
-```{r}
+```{r, eval = FALSE}
 test_collection <- Collection$new(collection_id = "Collection: tvseries: The Twilight Zone (1959)")
 result_tbl <- get_enriched_themes(test_collection)
 result_tbl
 ```
 
 To run the same analysis not counting *minor* level themes run
-```{r}
+```{r, eval = FALSE}
 result_tbl <- get_enriched_themes(test_collection, weights = list(choice = 1, major = 1, minor = 0))
 result_tbl
 ```
@@ -346,7 +346,7 @@ are described in [@Onsjo2020].
 
 To view the top 10 most thematically similar *Twilight Zone* franchise
 stories to *The Monsters Are Due on Maple Street* run
-```{r}
+```{r, eval = FALSE}
 query_story <- Story$new(story_id = "tz1959e1x22")
 result_tbl <- get_similar_stories(query_story)
 result_tbl
