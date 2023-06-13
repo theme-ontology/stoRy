@@ -49,7 +49,7 @@ tells us interesting things about the kind of stories we humans invent.
 The package is hosted on CRAN and can be installed by running the command
 
 ```{r setup}
-library(stoRy)
+install.packages("stoRy")
 ```
 
 The developmental version is hosted on GitHub and can be installed using the
