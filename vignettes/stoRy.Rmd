@@ -2,8 +2,8 @@
 title: "An Introduction to stoRy"
 author:
   - Paul Sheridan
-  - Oshan Modi
   - Mikael Onsjö
+  - Oshan Modi
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 bibliography: assets/stoRy_refs.bib
 output: rmarkdown::html_vignette
