@@ -22,10 +22,15 @@ tz1959e3x24
 tz1959e1x22
 tz1959e2x06")
   collection_id <- "Collection: Three Miscellaneous Twilight Zone Episodes"
+  title <- "Three Miscellaneous Twilight Zone Episodes"
   date <- "1959-1964"
   description <- "Three miscellaneous Twilight Zone episodes used for testing purposes."
   references <- "https://www.themeontology.org"
   component_story_ids <- as_tibble_col(c("tz1959e3x24", "tz1959e1x22", "tz1959e2x06"), column_name = "component_story_ids")
+  size <- nrow(component_story_ids)
   collection <- Collection$new(collection_id, file)
+  expect_equal(collection$collection_id(), collection_id)
+  expect_equal(collection$title(), title)
+  expect_equal(collection$description(), description)
   expect_equal(collection$component_story_ids(), component_story_ids)
 })
