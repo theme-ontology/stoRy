@@ -224,9 +224,11 @@ Collection <- R6::R6Class(
     #' @description
     #' return The path of the st.txt collection file. This is the file path as
     #'   it occurs on the Theme Ontology GitHub repository at 
-    #'   \url{https://github.com/theme-ontology/theming}.
+    #'   \url{https://github.com/theme-ontology/theming}. If the collection was
+    #'   read in from a string or is being hosted locally, then NULL is
+    #'   returned.
     source = function() {
-      private$story %>% pull(.data$source)
+      private$collection %>% pull(.data$source)
     },
     #' @description
     #' return A length-one numeric vector containing the number of stories in
